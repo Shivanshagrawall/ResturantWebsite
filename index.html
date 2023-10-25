@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturant Website</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100%;
+            width: 100%;
+        }
+        .header{
+            position: relative;
+        }
+        .navbar{
+            height: 50px;
+            width: 100%;
+            background-color: white;
+            opacity: 0.8;
+            position: sticky;
+            display: flex;
+            align-items: center;
+        }
+        .logo{
+            height: 40px;
+            width: 50%;
+            color: black;
+            font-size: 30px;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 15px;
+        }
+        .navlist{
+            height: 40px;
+            width: 50%;
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 25px;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+        .navlist a{
+            color:black;
+            text-decoration: none;
+        }
+        .navlist a:hover{
+            color: green;
+        }
+        .header{
+            height: 350px;
+            width: 100%;
+            background-image: url(Food\ background.jpg);
+            background-size: cover;
+        }
+        .headertext{
+            height: 170px;
+            width: 50%;
+            margin: auto;
+            margin-top: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            text-align: center;
+        }
+        .headertext h1{
+            font-size: 36px
+        }
+        .headertext h3{
+            font-size: 30px;
+            font-weight: 400;
+        }
+        .menubutton{
+            height: 60px;
+            width: 120px;
+            align-self: center;
+            font-size: 30px;
+            border-radius: 50px;
+            background-color: #3cb371;
+            color: white;
+        }
+        .menubutton:hover{
+            background-color: #2e8b57;
+        }
+        .aboutus{
+            height: 400px;
+            width: 80%;
+            margin: auto;
+            /*
+            border: 2px solid red;
+            */
+            margin-top: 80px;
+            display: flex;
+        }
+        .left{
+            height: 100%;
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5;
+            padding: 20px;
+        }
+        .left h3{
+            font-size: 24px;
+            font-weight: 600;
+            color: grey;
+        }
+        .left h1{
+            font-size: 42px;
+            font-weight: 700;
+        }
+        .left p{
+            font-size: 24px;
+            font-weight: 500;
+        }
+        .right{
+            height: 100%;
+            width: 35%;
+        }
+        .right img{
+            height: 380px;
+            width: 370px;
+        }
+        .typesoffood{
+            height: 400px;
+            width: 80%;
+            /*
+            border: 2px solid red;
+            */
+            margin: auto;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+        }
+        .upper2{
+            height: 25%;
+            width: 100%;
+            padding: 30px;
+        }
+        .upper2 h2{
+            text-align: center;
+            font-size: 36px;
+            color: grey;
+        }
+        .lower2{
+            height: 75%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .lower2 img{
+            height: 300px;
+            width: 350px;
+        }
+        .foodmenu{
+            height: 1200px;
+            width: 85%;
+            margin: auto;
+            /*
+            border: 2px solid red;
+            */
+            margin-top: 25px;
+            display: grid;
+            gap: 20px;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+        }
+        .heading{
+            grid-column-start: 1;
+            grid-column-end: 3;
+            /*
+            border: 2px solid red;
+            */
+            place-self: center;
+            font-size: 24px;
+            color:grey
+        }
+        .fooditem{
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .fooditem img{
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
+        }
+        .right1 h3{
+            font-size: 28px;
+            margin-bottom: 15px;
+            margin-left: 15px;
+        }
+        .right1 p{
+            font-weight: 500;
+            font-size: 24px;
+            color: grey;
+            margin-bottom: 15px;
+            margin-left: 15px;
+        }
+        .right1 h4{
+            font-size: 26px;
+            color: green;
+            margin-left: 15px;
+        }
+        #fooditem1{
+            grid-column-start: 1;
+            grid-column-end: 2;
+            /*
+            border: 2px solid red;
+            */
+        }
+        #fooditem2{
+            grid-column-start: 2;
+            grid-column-end: 3;
+            /*
+            border: 2px solid red;
+            */
+        }
+        #fooditem3{
+            grid-column-start: 1;
+            grid-column-end: 2;
+            /*
+            border: 2px solid red;
+            */
+        }
+        #fooditem4{
+            grid-column-start: 2;
+            grid-column-end: 3;
+            /*
+            border: 2px solid red;
+            */
+        }
+        #fooditem5{
+            grid-column-start: 1;
+            grid-column-end: 2;
+            /*
+            border: 2px solid red;
+            */
+        }
+        #fooditem6{
+            grid-column-start: 2;
+            grid-column-end: 3;
+            /*
+            border: 2px solid red;
+            */
+        }
+        .customer{
+            height: 600px;
+            width: 100%;
+            /*
+            border: 2px solid red;
+            */
+            margin-top: 20px;
+            background-color: rgba(243, 243, 243);
+        }
+        .upper3{
+            height: 25%;
+            width: 100%;
+            /*
+            border: 2px solid red;
+            */
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            font-size: 26px;
+            color: grey;
+        }
+        .lower3{
+            height: 75%;
+            width: 100%;
+            /*
+            border: 2px solid red;
+            */
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .customerabout{
+            height: 100%;
+            width:320px;
+            /*
+            border: 2px solid red; 
+            */  
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .customerabout img{
+            height: 35%;
+            width: 60%;
+            border-radius: 50%;
+            margin-bottom: 60px;    
+        }
+        .customer h3{
+            font-size: 28px;
+            font-weight: 400;
+        }
+        .customer p{
+            font-size: 24px;
+        }
+        .contact{
+            height: 500px;
+            width: 100%;
+            /*
+            border: 2px solid red;
+            */
+            margin-top: 20px;
+            background-color: rgb(226, 226, 226);
+        }
+        .details{
+            height: 400px;
+            width: 85%;
+            /*
+            border: 2px solid red;
+            */
+            margin: auto;
+            margin-top: 70px;
+            display: flex;
+        }
+        .left2{
+            height: 100%;
+            width: 50%;
+            /*
+            border: 2px solid red;
+            */
+        }
+        .left2 img{
+            height: 100%;
+            width: 100%;
+        }
+        .right2{
+            height: 100%;
+            width: 50%;
+            /*
+            border: 2px solid red;
+            */
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+        }
+        .right2 h2{
+            font-size: 40px;
+            color: grey;
+        }
+        .name{
+            height: 50px;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #ccc;
+        }
+        .email{
+            height: 50px;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #ccc;
+        }
+        .message{
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #ccc;
+            margin-top: 15px;
+        }
+        .submitbutton{
+            height: 50px;
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 50px;
+            color:white;
+            background-color: #3cb371;
+            font-size: 24px;
+        }
+        .submitbutton:hover{
+            background-color: #2e8b57;
+        }
+        .footer{
+            height: 120px;
+            width: 100%;
+            background-color: #414141;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="navbar">
+                <div class="logo">Resturant Website</div>
+                <div class="navlist">
+                    <h4><a href="#">Home</a></h4>
+                    <h4><a href="#">About</a></h4>
+                    <h4><a href="#">Category</a></h4>
+                    <h4><a href="#">Menu</a></h4>
+                    <h4><a href="#">Testimonial</a></h4>
+                    <h4><a href="#">Contact</a></h4>
+                </div>
+            </div>
+            <div class="headertext">
+                <h1>EAT RIGHT FOOD</h1>
+                <h3>Eat Healty, it is good for our health.</h3>
+                <input type="button" value="MENU" class="menubutton">
+            </div>
+        </div>
+        <div class="aboutus">
+            <div class="left">
+                <h3>About Us</h3>
+                <h1>We've beem making <br>healthy food last for 10 years</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse ab eos omnis, nobis dignissimos perferendis et officia architecto, fugiat possimus eaque qui ullam excepturi suscipit aliquid optio, maiores praesentium soluta alias asperiores saepe commodi consequatur? Perferendis est placeat facere aspernatur!</p>
+            </div>
+            <div class="right">
+                <img src="about-photo.jpg" alt="Image">
+            </div>
+        </div>
+        <div class="typesoffood">
+            <div class="upper2">
+            <h2>TYPES OF FOOD</h2>
+            </div>
+            <div class="lower2">
+                <img src="food1.jpg" alt="food">
+                <img src="food2.jpg" alt="food">
+                <img src="food3.jpg" alt="food">
+            </div>
+        </div>
+        <div class="foodmenu">
+            <div class="heading">
+                <h1>Food Menu</h1>
+            </div>
+            <div class="fooditem" id="fooditem1">
+                <div class="left1">
+                    <img src="food-menu1.jpg" alt="fooditem1">
+                </div>
+                <div class="right1">
+                    <h3>Food Menu Item 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, quae.</p>
+                    <h4>Price: ₹ 250</h4>
+                </div>
+            </div>
+            <div class="fooditem" id="fooditem2">
+                <div class="left1">
+                    <img src="food-menu2.jpg" alt="fooditem1">
+                </div>
+                <div class="right1">
+                    <h3>Food Menu Item 2</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, quae.</p>
+                    <h4>Price: ₹ 250</h4>
+                </div>
+            </div>
+            <div class="fooditem" id="fooditem3">
+                <div class="left1">
+                    <img src="food-menu3.jpg" alt="fooditem1">
+                </div>
+                <div class="right1">
+                    <h3>Food Menu Item 3</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, quae.</p>
+                    <h4>Price: ₹ 250</h4>
+                </div>
+            </div>
+            <div class="fooditem" id="fooditem4">
+                <div class="left1">
+                    <img src="food-menu4.jpg" alt="fooditem1">
+                </div>
+                <div class="right1">
+                    <h3>Food Menu Item 4</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, quae.</p>
+                    <h4>Price: ₹ 250</h4>
+                </div>
+            </div>
+            <div class="fooditem" id="fooditem5">
+                <div class="left1">
+                    <img src="food-menu5.jpg" alt="fooditem1">
+                </div>
+                <div class="right1">
+                    <h3>Food Menu Item 5</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, quae.</p>
+                    <h4>Price: ₹ 250</h4>
+                </div>
+            </div>
+            <div class="fooditem" id="fooditem6">
+                <div class="left1">
+                    <img src="food-menu6.jpg" alt="fooditem1">
+                </div>
+                <div class="right1">
+                    <h3>Food Menu Item 6</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, quae.</p>
+                    <h4>Price: ₹ 250</h4>
+                </div>
+            </div>
+        </div>
+        <div class="customer">
+            <div class="upper3">
+                <h1>What Our Customers Say</h1>
+            </div>
+            <div class="lower3">
+                <div class="customerabout" id="customer1">
+                    <img src="male-photo1.jpg" alt="customer1">
+                    <h3>Ross Lee</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit voluptas cupiditate aspernatur odit doloribus non.</p>
+                </div>
+                <div class="customerabout" id="customer2">
+                    <img src="female-photo1.jpg" alt="customer1">
+                    <h3>Amelia Watson</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit voluptas cupiditate aspernatur odit doloribus non.</p>
+                </div>
+                <div class="customerabout" id="customer3">
+                    <img src="male-photo3.jpg" alt="customer1">
+                    <h3>Ben Roy</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit voluptas cupiditate aspernatur odit doloribus non.</p>
+                </div>
+            </div>
+        </div>
+        <div class="contact">
+            <div class="details">
+                <div class="left2">
+                    <img src="restraunt2.jpg" alt="Image">
+                </div>
+                <div class="right2">
+                    <h2>Contact Us</h2>
+                    <input type="text" placeholder="Your Name" class="name">
+                    <input type="email" placeholder="E-Mail" class="email">
+                    <textarea name="message" id="" cols="30" rows="10" placeholder="Type Your Message" class="message"></textarea>
+                    <input type="button" value="SUBMIT" class="submitbutton">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <h2>Restraunt © all rights reserved</h2>
+        </div>
+    </div>
+</body>
+</html>
